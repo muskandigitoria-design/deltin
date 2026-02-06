@@ -25,39 +25,34 @@
         body, html {
             width: 100%;
             height: 100%;
-            background-color: #050505;
+            background-color: #000;
             font-family: 'Poppins', sans-serif;
             color: #fff;
             overflow: hidden;
             position: fixed;
         }
 
-        /* --- BLURRY AURA ANIMATION --- */
-        .background-wrapper {
+        /* --- MODERN MESH GRADIENT ANIMATION --- */
+        /* This creates a soft, blurry, breathing golden background */
+        .mesh-bg {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: -1;
-            filter: blur(80px); /* This creates the blurry "nice" effect */
-            opacity: 0.6;
+            background-color: #000;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(41,100%,15%,1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(43,100%,20%,1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(38,100%,10%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(45,100%,25%,1) 0px, transparent 50%);
+            animation: mesh-breathe 10s ease infinite alternate;
+            background-size: 200% 200%;
         }
 
-        .blob {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: #b38728;
-            border-radius: 50%;
-            animation: move 20s infinite alternate;
-        }
-
-        .blob-1 { top: -10%; left: -10%; background: #aa771c; }
-        .blob-2 { bottom: -10%; right: -10%; background: #bf953f; animation-duration: 25s; }
-        .blob-3 { top: 40%; left: 30%; width: 200px; height: 200px; background: #fcf6ba; animation-duration: 15s; }
-
-        @keyframes move {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(100px, 100px) scale(1.2); }
+        @keyframes mesh-breathe {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 100%; }
         }
 
         .container {
@@ -72,18 +67,18 @@
             z-index: 10;
         }
 
-        /* Logo Styling */
+        /* Logo with fixed visibility */
         .logo-wrapper {
             margin-bottom: 15px;
         }
 
         .logo {
-            width: 110px;
-            height: 110px;
+            width: 105px;
+            height: 105px;
             border-radius: 50%;
             padding: 3px;
             background: var(--gold-gradient);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             animation: float 4s ease-in-out infinite;
             margin: 0 auto;
         }
@@ -96,46 +91,46 @@
             display: block;
         }
 
-        /* Text Content */
+        /* Headlines */
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.7rem, 8vw, 2.8rem);
+            font-size: clamp(1.8rem, 8vw, 3rem);
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
-            letter-spacing: 1px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+            letter-spacing: 2px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
         }
 
         .team-tag {
             font-size: 0.8rem;
-            letter-spacing: 4px;
-            color: #fff;
+            letter-spacing: 5px;
+            color: rgba(255,255,255,0.7);
             text-transform: uppercase;
             margin-bottom: 25px;
             font-weight: 600;
-            opacity: 0.8;
         }
 
-        /* Content Panel */
+        /* Semi-Transparent Glass Box */
         .glass-panel {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 25px;
-            border-radius: 24px;
+            border-radius: 25px;
             width: 100%;
             max-width: 400px;
             margin-bottom: 35px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
         .glass-panel p {
             font-size: 1rem;
-            line-height: 1.6;
-            color: #efefef;
+            line-height: 1.5;
+            color: #f1f1f1;
+            font-weight: 300;
         }
 
         .stats {
@@ -147,9 +142,9 @@
         }
 
         .stat-item b { color: var(--gold); font-size: 1.2rem; }
-        .stat-item p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.6; }
+        .stat-item p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.6; margin-top: 3px; }
 
-        /* --- THE ZOOM BUTTON --- */
+        /* --- PROMINENT ZOOM BUTTON --- */
         .btn-telegram {
             width: 100%;
             max-width: 320px;
@@ -162,14 +157,14 @@
             border-radius: 50px;
             text-transform: uppercase;
             display: block;
-            box-shadow: 0 15px 35px rgba(179, 135, 40, 0.4);
-            animation: zoomPulse 2s infinite ease-in-out;
+            box-shadow: 0 10px 40px rgba(179, 135, 40, 0.5);
+            animation: pro-zoom 2.5s infinite ease-in-out;
         }
 
-        @keyframes zoomPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.07); }
-            100% { transform: scale(1); }
+        @keyframes pro-zoom {
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(179, 135, 40, 0.4); }
+            50% { transform: scale(1.08); box-shadow: 0 15px 45px rgba(179, 135, 40, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 10px 30px rgba(179, 135, 40, 0.4); }
         }
 
         @keyframes float {
@@ -180,31 +175,27 @@
         .footer {
             margin-top: 30px;
             font-size: 0.7rem;
-            opacity: 0.5;
+            opacity: 0.4;
             letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
-    <div class="background-wrapper">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
+    <div class="mesh-bg"></div>
 
     <div class="container">
         <div class="logo-wrapper">
             <div class="logo">
-                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Casino VIP">
+                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Deltin Royale Casino">
             </div>
         </div>
 
         <h1>DELTIN ROYALE</h1>
-        <div class="team-tag">Elite Betting mastery</div>
+        <div class="team-tag">Betting Excellence</div>
 
         <div class="glass-panel">
-            <p>Master the table and crush the odds. Join us for <b>real-time predictive hacks</b> and exclusive winning strategies.</p>
+            <p>Master the house and crush the odds. Join the elite circle for <b>live predictive algorithms</b> and winning insights.</p>
             
             <div class="stats">
                 <div class="stat-item">
@@ -217,7 +208,7 @@
                 </div>
                 <div class="stat-item">
                     <b>LIVE</b>
-                    <p>Hacks</p>
+                    <p>Support</p>
                 </div>
             </div>
         </div>
@@ -226,7 +217,7 @@
             JOIN THE WINNING STREAK
         </a>
 
-        <div class="footer">✦ 18+ | PLAY RESPONSIBLY ✦</div>
+        <div class="footer">✦ 18+ | PLAY STRATEGICALLY ✦</div>
     </div>
 
 </body>
