@@ -9,7 +9,6 @@
         :root {
             --gold: #ffcc00;
             --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            --dark-overlay: rgba(0, 0, 0, 0.85);
         }
 
         * {
@@ -21,36 +20,27 @@
         body, html {
             height: 100%;
             font-family: 'Poppins', sans-serif;
-            background-color: #000;
+            background-color: #050505;
             color: #fff;
-            overflow: hidden; /* Keeps it one-page clean */
+            overflow: hidden;
         }
 
-        /* Animated Luxury Background */
-        .hero-bg {
+        /* Animated Luxury Gradient Background */
+        .canvas-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1596838132731-dd93c852235a?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
             z-index: -1;
-            filter: brightness(0.4) grayscale(0.2);
-            animation: zoomBg 20s infinite alternate;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
         }
 
-        @keyframes zoomBg {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Golden Sparkle Animation */
+        #particles-js {
+            position: fixed;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, transparent 20%, #000 90%);
             z-index: 0;
         }
 
@@ -66,20 +56,19 @@
             padding: 20px;
         }
 
-        /* Circular Logo with 50% radius and Glowing Border */
+        /* Logo with Glow and Border */
         .logo-wrapper {
-            position: relative;
             margin-bottom: 20px;
+            animation: floating 4s ease-in-out infinite;
         }
 
         .logo {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            padding: 5px;
+            padding: 4px;
             background: var(--gold-gradient);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
-            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 0 40px rgba(191, 149, 63, 0.4);
         }
 
         .logo img {
@@ -87,119 +76,119 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #000;
+            border: 3px solid #000;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
         }
 
-        /* Typography */
+        /* Headline Styling */
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
+            font-size: clamp(1.8rem, 8vw, 3rem);
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: 4px;
             margin-bottom: 5px;
-            letter-spacing: 3px;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8));
+            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.5));
         }
 
         .team-tag {
-            font-size: 1.2rem;
-            color: #fff;
-            letter-spacing: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
         }
 
         /* Glassmorphism Card */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
-            border-radius: 20px;
-            max-width: 450px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-radius: 24px;
+            max-width: 500px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             margin-bottom: 30px;
+            transform: perspective(1000px) rotateX(5deg);
         }
 
-        .glass-panel p {
-            font-weight: 300;
-            line-height: 1.6;
-            color: #e0e0e0;
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
         }
 
-        .highlight {
-            color: var(--gold);
-            font-weight: 600;
-            display: block;
-            margin-top: 10px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
+        .stat-item b { color: var(--gold); font-size: 1.2rem; }
+        .stat-item p { font-size: 0.7rem; text-transform: uppercase; opacity: 0.6; }
 
-        /* High-End Animated Button */
+        /* Neon Gold CTA Button */
         .btn-telegram {
             position: relative;
-            padding: 20px 50px;
+            padding: 22px 60px;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
             color: #000;
             text-transform: uppercase;
             text-decoration: none;
             background: var(--gold-gradient);
-            border-radius: 50px;
+            border-radius: 100px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(191, 149, 63, 0.5);
             overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         .btn-telegram:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
+            transform: scale(1.08) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(191, 149, 63, 0.8);
         }
 
-        /* Light Streak Animation on Button */
-        .btn-telegram::after {
+        .btn-telegram::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255,255,255,0.2);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+            animation: sweep 3s infinite;
         }
 
-        @keyframes shine {
-            0% { left: -150%; }
-            100% { left: 150%; }
+        @keyframes sweep {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
         }
 
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
+        /* Footer Info */
+        .footer-note {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 480px) {
+            .glass-panel { width: 90%; padding: 20px; }
             h1 { font-size: 1.8rem; }
-            .team-tag { font-size: 0.9rem; }
-            .logo { width: 100px; height: 100px; }
-            .glass-panel { padding: 20px; width: 85%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-bg"></div>
-    <div class="overlay"></div>
+    <div class="canvas-bg"></div>
+    <div id="particles-js"></div>
 
     <div class="main-content">
         <div class="logo-wrapper">
             <div class="logo">
-                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11 Team Logo">
+                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11 Team">
             </div>
         </div>
 
@@ -207,23 +196,52 @@
         <div class="team-tag">{ Hack11 Team }</div>
 
         <div class="glass-panel">
-            <p>Experience the ultimate luxury of winning. Get exclusive access to premium hacks, real-time table insights, and expert strategies.</p>
-            <span class="highlight">✦ SECURE ✦ PRIVATE ✦ PROFESSIONAL ✦</span>
+            <p style="font-weight: 300; font-size: 1rem; color: #ddd;">Unlocking the secrets of the table. Join the elite circle for high-accuracy hacks and professional casino insights.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <b id="memberCount">12,400</b>
+                    <p>Members</p>
+                </div>
+                <div class="stat-item">
+                    <b>98.2%</b>
+                    <p>Accuracy</p>
+                </div>
+                <div class="stat-item">
+                    <b>24/7</b>
+                    <p>Support</p>
+                </div>
+            </div>
         </div>
 
         <a href="https://t.me/+v8imbxIA--gxNjhl" class="btn-telegram">
-            Join VIP Telegram
+            GET VIP ACCESS NOW
         </a>
+
+        <div class="footer-note">✦ ONLY FOR SERIOUS PLAYERS ✦</div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Speed Optimization: Simple interaction script
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("VIP Landing Page Active");
-            // Prevent right click to make it feel more 'exclusive' (optional)
-            document.addEventListener('contextmenu', event => event.preventDefault());
+        // Particle Config
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#bf953f" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 1, "direction": "top", "random": true, "straight": false, "out_mode": "out" }
+            }
         });
-    </script>
 
+        // Simple Counter Animation
+        let count = 12400;
+        setInterval(() => {
+            count += Math.floor(Math.random() * 3);
+            document.getElementById('memberCount').innerText = count.toLocaleString();
+        }, 3000);
+    </script>
 </body>
 </html>
