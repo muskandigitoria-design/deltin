@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>VIP ACCESS | DELTIN ROYALE</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
@@ -12,10 +13,8 @@
         :root {
             --gold: #ffcc00;
             --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            --dark-bg: #050505;
         }
 
-        /* Essential Reset & Speed Optimization */
         * {
             margin: 0;
             padding: 0;
@@ -26,20 +25,19 @@
         body, html {
             width: 100%;
             height: 100%;
-            background-color: var(--dark-bg);
+            background-color: #000;
             font-family: 'Poppins', sans-serif;
             color: #fff;
-            overflow-x: hidden;
-            /* Fixed mobile viewport height bug */
-            height: -webkit-fill-available;
+            overflow: hidden; /* No scrolling for clean mobile look */
+            position: fixed; /* Prevents mobile rubber-banding */
         }
 
-        /* Optimized Background */
+        /* High-Performance Background */
         .canvas-bg {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
             z-index: -2;
         }
 
@@ -47,7 +45,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            z-index: -1; /* Placed behind content so logo shows */
+            z-index: -1;
         }
 
         .container {
@@ -55,29 +53,28 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            height: 100vh;
             width: 100%;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            position: relative;
-            z-index: 10; /* Ensures content is always on top */
+            z-index: 10;
         }
 
-        /* FIXED LOGO SECTION */
+        /* --- LOGO ANIMATION & FIX --- */
         .logo-wrapper {
-            margin-bottom: 20px;
-            display: block;
+            margin-bottom: 10px;
+            position: relative;
         }
 
         .logo {
-            width: 100px;
-            height: 100px;
+            width: 105px;
+            height: 105px;
             border-radius: 50%;
             padding: 3px;
             background: var(--gold-gradient);
-            box-shadow: 0 0 25px rgba(191, 149, 63, 0.6);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+            animation: float 4s ease-in-out infinite, glowPulse 3s infinite;
             margin: 0 auto;
-            animation: float 4s ease-in-out infinite;
         }
 
         .logo img {
@@ -86,37 +83,47 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #000;
-            display: block; /* Ensures visibility */
+            display: block;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 15px rgba(255, 204, 0, 0.3); }
+            50% { box-shadow: 0 0 35px rgba(255, 204, 0, 0.7); }
+            100% { box-shadow: 0 0 15px rgba(255, 204, 0, 0.3); }
         }
 
         /* Typography */
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.5rem, 8vw, 2.5rem);
+            font-size: clamp(1.6rem, 7vw, 2.5rem);
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .team-tag {
             font-size: 0.75rem;
-            letter-spacing: 4px;
-            color: var(--gold);
+            letter-spacing: 5px;
+            color: #ccc;
             text-transform: uppercase;
-            margin-bottom: 25px;
-            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        /* Mobile Card */
+        /* Casino Content Box */
         .glass-panel {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 20px;
-            border-radius: 20px;
+            border-radius: 15px;
             width: 100%;
             max-width: 380px;
             margin-bottom: 30px;
@@ -125,7 +132,7 @@
         .glass-panel p {
             font-size: 0.95rem;
             line-height: 1.5;
-            color: #efefef;
+            color: #fff;
         }
 
         .stats {
@@ -133,51 +140,46 @@
             justify-content: space-around;
             margin-top: 15px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 15px;
+            padding-top: 12px;
         }
 
         .stat-item b { color: var(--gold); font-size: 1.1rem; }
         .stat-item p { font-size: 0.6rem; text-transform: uppercase; opacity: 0.6; }
 
-        /* PULSE ZOOM BUTTON */
+        /* --- BUTTON ZOOM ANIMATION --- */
         .btn-telegram {
-            width: 100%;
+            width: 90%;
             max-width: 300px;
             padding: 18px;
             font-size: 1.1rem;
-            font-weight: 700;
+            font-weight: 800;
             color: #000;
             background: var(--gold-gradient);
             text-decoration: none;
             border-radius: 50px;
             text-transform: uppercase;
             display: block;
-            box-shadow: 0 10px 30px rgba(191, 149, 63, 0.4);
-            animation: pulse 2s infinite ease-in-out;
-            transition: 0.2s;
+            box-shadow: 0 10px 30px rgba(191, 149, 63, 0.5);
+            animation: zoomPulse 2s infinite ease-in-out;
+            transition: transform 0.2s;
         }
 
-        @keyframes pulse {
+        @keyframes zoomPulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.06); }
+            50% { transform: scale(1.08); }
             100% { transform: scale(1); }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .btn-telegram:active {
+            transform: scale(0.95);
+            animation: none;
         }
 
         .footer {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 0.65rem;
             opacity: 0.4;
             letter-spacing: 2px;
-        }
-
-        /* Speed Tweak: Reduce animations for users who prefer reduced motion */
-        @media (prefers-reduced-motion) {
-            .logo, .btn-telegram { animation: none; }
         }
     </style>
 </head>
@@ -189,19 +191,19 @@
     <div class="container">
         <div class="logo-wrapper">
             <div class="logo">
-                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11" onerror="this.style.display='none'">
+                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11 Casino">
             </div>
         </div>
 
         <h1>DELTIN ROYALE</h1>
-        <div class="team-tag">Elite Casino Hacks</div>
+        <div class="team-tag">Elite Betting Mastery</div>
 
         <div class="glass-panel">
-            <p>Master the table and crush the odds. Join the circle for <b>real-time predictive hacks</b> and winning strategies.</p>
+            <p>Crush the table and dominate the odds. Join for <b>high-accuracy predictive hacks</b> and exclusive winning streaks.</p>
             
             <div class="stats">
                 <div class="stat-item">
-                    <b id="count">12.4k</b>
+                    <b>12.4k</b>
                     <p>Winners</p>
                 </div>
                 <div class="stat-item">
@@ -210,7 +212,7 @@
                 </div>
                 <div class="stat-item">
                     <b>LIVE</b>
-                    <p>Access</p>
+                    <p>Updates</p>
                 </div>
             </div>
         </div>
@@ -224,11 +226,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        // Load particles only after everything else to ensure fast loading
         window.addEventListener('load', function() {
             particlesJS("particles-js", {
                 "particles": {
-                    "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                    "number": { "value": 35, "density": { "enable": true, "value_area": 800 } },
                     "color": { "value": "#bf953f" },
                     "shape": { "type": "circle" },
                     "opacity": { "value": 0.3 },
