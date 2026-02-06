@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELTIN ROYALE CASINO | Hack11 Team</title>
+    <style>
+        /* CSS Variables for Easy Customization */
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --text-white: #ffffff;
+            --btn-grad: linear-gradient(45deg, #d4af37, #f9e29c);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background Glow Effect */
+        .bg-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        /* Logo Styling */
+        .logo-container {
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            object-fit: cover;
+            /* Animation for entry */
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* Heading Styles */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .sub-heading {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Card/Content Box */
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Managed CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--btn-grad);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 400px) {
+            h1 { font-size: 1.5rem; }
+            .logo { width: 100px; height: 100px; }
+            .cta-button { width: 100%; padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/150/d4af37/000000?text=Hack11" alt="Logo" class="logo">
+        </div>
+
+        <h1>DELTIN ROYALE CASINO</h1>
+        <div class="sub-heading">{ Hack11 Team }</div>
+
+        <div class="info-card">
+            <p>Welcome to the ultimate destination for casino insights and strategic updates.</p>
+            <p><strong>Exclusive Hacks • Live Updates • Expert Analysis</strong></p>
+            <p>Join our elite community and stay ahead of the game with the Hack11 Team.</p>
+        </div>
+
+        <a href="https://t.me/+v8imbxIA--gxNjhl" target="_blank" class="cta-button" id="joinBtn">
+            JOIN TELEGRAM CHANNEL
+        </a>
+    </div>
+
+    <script>
+        // JS for basic speed optimization and interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('joinBtn');
+            
+            // Log for analytics (optional)
+            btn.addEventListener('click', () => {
+                console.log('Redirecting to Telegram...');
+            });
+
+            // Lazy load check (if you add more images later)
+            console.log("Landing page loaded successfully.");
+        });
+    </script>
+</body>
+</html>
