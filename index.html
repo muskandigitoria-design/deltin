@@ -38,7 +38,7 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: -1;
-            filter: blur(80px); /* This creates the blurry "nice" effect */
+            filter: blur(80px);
             opacity: 0.6;
         }
 
@@ -72,7 +72,6 @@
             z-index: 10;
         }
 
-        /* Logo Styling */
         .logo-wrapper {
             margin-bottom: 15px;
         }
@@ -96,7 +95,6 @@
             display: block;
         }
 
-        /* Text Content */
         h1 {
             font-family: 'Cinzel', serif;
             font-size: clamp(1.7rem, 8vw, 2.8rem);
@@ -118,7 +116,6 @@
             opacity: 0.8;
         }
 
-        /* Content Panel */
         .glass-panel {
             background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(15px);
@@ -149,7 +146,6 @@
         .stat-item b { color: var(--gold); font-size: 1.2rem; }
         .stat-item p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.6; }
 
-        /* --- THE ZOOM BUTTON --- */
         .btn-telegram {
             width: 100%;
             max-width: 320px;
@@ -177,11 +173,32 @@
             50% { transform: translateY(-10px); }
         }
 
+        /* --- UPDATED FOOTER SECTION --- */
         .footer {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 0.7rem;
+            opacity: 0.7;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer span {
             opacity: 0.5;
             letter-spacing: 2px;
+        }
+
+        .agency-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .agency-link:hover {
+            border-bottom: 1px solid var(--gold);
         }
     </style>
 </head>
@@ -226,7 +243,12 @@
             JOIN THE WINNING STREAK
         </a>
 
-        <div class="footer">✦ 18+ | PLAY RESPONSIBLY ✦</div>
+        <div class="footer">
+            <span>✦ 18+ | PLAY RESPONSIBLY ✦</span>
+            <p>Ads managed by 
+                <a href="https://telegram.me/+TRlJl628l-FkMWE9" class="agency-link">NEXGROWW AGENCY</a>
+            </p>
+        </div>
     </div>
 
 </body>
