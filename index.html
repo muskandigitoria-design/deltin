@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JACKPOT ACCESS | DELTIN ROYALE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>VIP ACCESS | DELTIN ROYALE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --gold: #ffcc00;
             --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --dark-bg: #050505;
         }
 
+        /* Essential Reset & Speed Optimization */
         * {
             margin: 0;
             padding: 0;
@@ -19,171 +24,160 @@
         }
 
         body, html {
-            height: 100%;
             width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
             font-family: 'Poppins', sans-serif;
-            background-color: #050505;
             color: #fff;
-            overflow: hidden;
-            position: fixed;
+            overflow-x: hidden;
+            /* Fixed mobile viewport height bug */
+            height: -webkit-fill-available;
         }
 
-        /* Background Effects */
+        /* Optimized Background */
         .canvas-bg {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            z-index: -2;
         }
 
         #particles-js {
-            position: absolute;
+            position: fixed;
+            top: 0; left: 0;
             width: 100%; height: 100%;
-            z-index: 0;
+            z-index: -1; /* Placed behind content so logo shows */
         }
 
-        .main-content {
-            position: relative;
-            z-index: 10;
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
+            padding: 20px;
             text-align: center;
-            padding: 15px;
+            position: relative;
+            z-index: 10; /* Ensures content is always on top */
         }
 
-        /* Floating Logo */
+        /* FIXED LOGO SECTION */
         .logo-wrapper {
-            margin-bottom: 15px;
-            animation: floating 4s ease-in-out infinite;
+            margin-bottom: 20px;
+            display: block;
         }
 
         .logo {
-            width: 115px;
-            height: 115px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             padding: 3px;
             background: var(--gold-gradient);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 25px rgba(191, 149, 63, 0.6);
+            margin: 0 auto;
+            animation: float 4s ease-in-out infinite;
         }
 
         .logo img {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #000;
+            display: block; /* Ensures visibility */
         }
 
-        /* Titles */
+        /* Typography */
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.5rem, 8vw, 2.8rem);
+            font-size: clamp(1.5rem, 8vw, 2.5rem);
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
             margin-bottom: 5px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
         }
 
         .team-tag {
-            font-size: 0.8rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
             color: var(--gold);
+            text-transform: uppercase;
             margin-bottom: 25px;
             font-weight: 600;
         }
 
-        /* Updated Casino-Style Text Panel */
+        /* Mobile Card */
         .glass-panel {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px 20px;
+            padding: 20px;
             border-radius: 20px;
-            width: 95%;
-            max-width: 420px;
-            margin-bottom: 35px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            width: 100%;
+            max-width: 380px;
+            margin-bottom: 30px;
         }
 
         .glass-panel p {
-            font-size: 1rem;
-            color: #ffffff;
+            font-size: 0.95rem;
             line-height: 1.5;
-            font-weight: 400;
-        }
-
-        .highlight-text {
-            display: block;
-            margin-top: 10px;
-            font-weight: 600;
-            color: #ffcc00;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+            color: #efefef;
         }
 
         .stats {
             display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+            justify-content: space-around;
+            margin-top: 15px;
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 15px;
         }
 
         .stat-item b { color: var(--gold); font-size: 1.1rem; }
-        .stat-item p { font-size: 0.65rem; opacity: 0.6; text-transform: uppercase; margin-top: 4px; }
+        .stat-item p { font-size: 0.6rem; text-transform: uppercase; opacity: 0.6; }
 
-        /* Zooming "Call to Action" Button */
+        /* PULSE ZOOM BUTTON */
         .btn-telegram {
-            width: 90%;
-            max-width: 320px;
-            padding: 20px 0;
-            font-size: 1.2rem;
-            font-weight: 800;
+            width: 100%;
+            max-width: 300px;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: 700;
             color: #000;
-            text-transform: uppercase;
-            text-decoration: none;
             background: var(--gold-gradient);
+            text-decoration: none;
             border-radius: 50px;
-            display: block;
-            box-shadow: 0 10px 40px rgba(255, 204, 0, 0.4);
-            animation: pulseZoom 2s infinite ease-in-out;
-            border: none;
-        }
-
-        @keyframes pulseZoom {
-            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 204, 0, 0.3); }
-            50% { transform: scale(1.06); box-shadow: 0 15px 45px rgba(255, 204, 0, 0.6); }
-            100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 204, 0, 0.3); }
-        }
-
-        .btn-telegram:active {
-            transform: scale(0.95);
-            animation: none;
-        }
-
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        .footer-note {
-            margin-top: 30px;
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.4);
-            letter-spacing: 2px;
             text-transform: uppercase;
+            display: block;
+            box-shadow: 0 10px 30px rgba(191, 149, 63, 0.4);
+            animation: pulse 2s infinite ease-in-out;
+            transition: 0.2s;
         }
 
-        @media (min-width: 768px) {
-            .logo { width: 130px; height: 130px; }
-            h1 { font-size: 3rem; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.65rem;
+            opacity: 0.4;
+            letter-spacing: 2px;
+        }
+
+        /* Speed Tweak: Reduce animations for users who prefer reduced motion */
+        @media (prefers-reduced-motion) {
+            .logo, .btn-telegram { animation: none; }
         }
     </style>
 </head>
@@ -192,23 +186,22 @@
     <div class="canvas-bg"></div>
     <div id="particles-js"></div>
 
-    <div class="main-content">
+    <div class="container">
         <div class="logo-wrapper">
             <div class="logo">
-                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11 Logo">
+                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11" onerror="this.style.display='none'">
             </div>
         </div>
 
-        <h1>DELTIN ROYALE CASINO</h1>
-        <div class="team-tag">Elite Gambling Hackers</div>
+        <h1>DELTIN ROYALE</h1>
+        <div class="team-tag">Elite Casino Hacks</div>
 
         <div class="glass-panel">
-            <p>Master the table and crush the odds. Join us for <b>real-time predictive hacks</b> and guaranteed winning strategies.</p>
-            <span class="highlight-text">♠️ BE THE HOUSE. WIN EVERY ROUND. ♠️</span>
+            <p>Master the table and crush the odds. Join the circle for <b>real-time predictive hacks</b> and winning strategies.</p>
             
             <div class="stats">
                 <div class="stat-item">
-                    <b id="memberCount">12,400</b>
+                    <b id="count">12.4k</b>
                     <p>Winners</p>
                 </div>
                 <div class="stat-item">
@@ -217,7 +210,7 @@
                 </div>
                 <div class="stat-item">
                     <b>LIVE</b>
-                    <p>Updates</p>
+                    <p>Access</p>
                 </div>
             </div>
         </div>
@@ -226,29 +219,24 @@
             JOIN THE WINNING STREAK
         </a>
 
-        <div class="footer-note">✦ 18+ | Play Strategically ✦</div>
+        <div class="footer">✦ 18+ | PLAY RESPONSIBLY ✦</div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#ffcc00" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.4, "random": true },
-                "size": { "value": 2.5, "random": true },
-                "line_linked": { "enable": false },
-                "move": { "enable": true, "speed": 1.2, "direction": "top", "random": true, "out_mode": "out" }
-            }
+        // Load particles only after everything else to ensure fast loading
+        window.addEventListener('load', function() {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#bf953f" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.3 },
+                    "size": { "value": 2 },
+                    "move": { "enable": true, "speed": 1, "direction": "top", "out_mode": "out" }
+                }
+            });
         });
-
-        // Counter Logic
-        let count = 12400;
-        setInterval(() => {
-            count += Math.floor(Math.random() * 2);
-            document.getElementById('memberCount').innerText = count.toLocaleString();
-        }, 5000);
     </script>
 </body>
 </html>
