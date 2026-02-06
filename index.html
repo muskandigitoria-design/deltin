@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VIP ACCESS | DELTIN ROYALE CASINO</title>
+    <title>JACKPOT ACCESS | DELTIN ROYALE</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -28,6 +28,7 @@
             position: fixed;
         }
 
+        /* Background Effects */
         .canvas-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -54,19 +55,19 @@
             padding: 15px;
         }
 
-        /* Logo Floating Animation */
+        /* Floating Logo */
         .logo-wrapper {
             margin-bottom: 15px;
             animation: floating 4s ease-in-out infinite;
         }
 
         .logo {
-            width: 110px;
-            height: 110px;
+            width: 115px;
+            height: 115px;
             border-radius: 50%;
             padding: 3px;
             background: var(--gold-gradient);
-            box-shadow: 0 0 30px rgba(191, 149, 63, 0.4);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
         }
 
         .logo img {
@@ -76,103 +77,113 @@
             border: 2px solid #000;
         }
 
-        /* Responsive Headline */
+        /* Titles */
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.4rem, 7vw, 2.5rem);
+            font-size: clamp(1.5rem, 8vw, 2.8rem);
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: 2px;
             margin-bottom: 5px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .team-tag {
-            font-size: 0.85rem;
-            letter-spacing: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 20px;
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-weight: 600;
         }
 
-        /* Glassmorphism Panel */
+        /* Updated Casino-Style Text Panel */
         .glass-panel {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            padding: 25px 20px;
             border-radius: 20px;
             width: 95%;
-            max-width: 400px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            max-width: 420px;
+            margin-bottom: 35px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
         .glass-panel p {
-            font-size: 0.9rem;
-            color: #ddd;
-            line-height: 1.4;
+            font-size: 1rem;
+            color: #ffffff;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .highlight-text {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #ffcc00;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
 
         .stats {
             display: flex;
             justify-content: space-between;
-            margin-top: 15px;
+            margin-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 12px;
+            padding-top: 15px;
         }
 
-        .stat-item b { color: var(--gold); font-size: 1rem; }
-        .stat-item p { font-size: 0.6rem; opacity: 0.5; text-transform: uppercase; }
+        .stat-item b { color: var(--gold); font-size: 1.1rem; }
+        .stat-item p { font-size: 0.65rem; opacity: 0.6; text-transform: uppercase; margin-top: 4px; }
 
-        /* --- NEW ZOOM IN-OUT BUTTON CODE --- */
+        /* Zooming "Call to Action" Button */
         .btn-telegram {
-            position: relative;
             width: 90%;
             max-width: 320px;
-            padding: 18px 0;
-            font-size: 1.1rem;
-            font-weight: 700;
+            padding: 20px 0;
+            font-size: 1.2rem;
+            font-weight: 800;
             color: #000;
             text-transform: uppercase;
             text-decoration: none;
             background: var(--gold-gradient);
             border-radius: 50px;
             display: block;
-            box-shadow: 0 10px 30px rgba(191, 149, 63, 0.5);
-            /* Zoom Animation */
-            animation: zoomInOut 2s ease-in-out infinite;
-            transition: transform 0.2s ease;
+            box-shadow: 0 10px 40px rgba(255, 204, 0, 0.4);
+            animation: pulseZoom 2s infinite ease-in-out;
+            border: none;
         }
 
-        /* Continuous Zoom In/Out Animation */
-        @keyframes zoomInOut {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
+        @keyframes pulseZoom {
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 204, 0, 0.3); }
+            50% { transform: scale(1.06); box-shadow: 0 15px 45px rgba(255, 204, 0, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 204, 0, 0.3); }
         }
 
         .btn-telegram:active {
             transform: scale(0.95);
-            animation: none; /* User tap par animation stop karke press effect dega */
+            animation: none;
         }
 
         @keyframes floating {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-12px); }
         }
 
         .footer-note {
-            margin-top: 25px;
+            margin-top: 30px;
             font-size: 0.7rem;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.4);
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         @media (min-width: 768px) {
             .logo { width: 130px; height: 130px; }
-            h1 { font-size: 2.8rem; }
-            .btn-telegram { width: 350px; }
+            h1 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -184,59 +195,60 @@
     <div class="main-content">
         <div class="logo-wrapper">
             <div class="logo">
-                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11 Team">
+                <img src="http://zentryx.fun/wp-content/uploads/2026/02/uteywd.jpg" alt="Hack11 Logo">
             </div>
         </div>
 
         <h1>DELTIN ROYALE CASINO</h1>
-        <div class="team-tag">{ Hack11 Team }</div>
+        <div class="team-tag">Elite Gambling Hackers</div>
 
         <div class="glass-panel">
-            <p>Join the DELTIN ROYAL CASINO  for high-accuracy hacks and professional insights.</p>
+            <p>Master the table and crush the odds. Join us for <b>real-time predictive hacks</b> and guaranteed winning strategies.</p>
+            <span class="highlight-text">♠️ BE THE HOUSE. WIN EVERY ROUND. ♠️</span>
             
             <div class="stats">
                 <div class="stat-item">
                     <b id="memberCount">12,400</b>
-                    <p>Members</p>
+                    <p>Winners</p>
                 </div>
                 <div class="stat-item">
                     <b>98.2%</b>
-                    <p>Accuracy</p>
+                    <p>Hit Rate</p>
                 </div>
                 <div class="stat-item">
-                    <b>24/7</b>
-                    <p>Support</p>
+                    <b>LIVE</b>
+                    <p>Updates</p>
                 </div>
             </div>
         </div>
 
         <a href="https://t.me/+v8imbxIA--gxNjhl" class="btn-telegram">
-            GET VIP ACCESS NOW
+            JOIN THE WINNING STREAK
         </a>
 
-        <div class="footer-note">✦ VIP ACCESS ONLY ✦</div>
+        <div class="footer-note">✦ 18+ | Play Strategically ✦</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#bf953f" },
+                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffcc00" },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.4, "random": true },
-                "size": { "value": 2, "random": true },
+                "size": { "value": 2.5, "random": true },
                 "line_linked": { "enable": false },
-                "move": { "enable": true, "speed": 1.5, "direction": "top", "random": true, "out_mode": "out" }
+                "move": { "enable": true, "speed": 1.2, "direction": "top", "random": true, "out_mode": "out" }
             }
         });
 
-        // Dynamic Counter
+        // Counter Logic
         let count = 12400;
         setInterval(() => {
             count += Math.floor(Math.random() * 2);
             document.getElementById('memberCount').innerText = count.toLocaleString();
-        }, 4000);
+        }, 5000);
     </script>
 </body>
 </html>
