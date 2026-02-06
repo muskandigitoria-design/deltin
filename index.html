@@ -3,177 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELTIN ROYALE CASINO | Hack11 Team</title>
+    <title>VIP ACCESS | DELTIN ROYALE CASINO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for Easy Customization */
         :root {
-            --gold: #d4af37;
-            --dark-bg: #0a0a0a;
-            --text-white: #ffffff;
-            --btn-grad: linear-gradient(45deg, #d4af37, #f9e29c);
+            --gold: #ffcc00;
+            --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --dark-overlay: rgba(0, 0, 0, 0.85);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden; /* Keeps it one-page clean */
         }
 
-        /* Background Glow Effect */
-        .bg-glow {
+        /* Animated Luxury Background */
+        .hero-bg {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1596838132731-dd93c852235a?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
             z-index: -1;
+            filter: brightness(0.4) grayscale(0.2);
+            animation: zoomBg 20s infinite alternate;
         }
 
-        .container {
+        @keyframes zoomBg {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, #000 90%);
+            z-index: 0;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             text-align: center;
             padding: 20px;
-            max-width: 500px;
-            width: 90%;
         }
 
-        /* Logo Styling */
-        .logo-container {
-            margin-bottom: 25px;
+        /* Circular Logo with 50% radius and Glowing Border */
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: 20px;
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 3px solid var(--gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            padding: 5px;
+            background: var(--gold-gradient);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
             object-fit: cover;
-            /* Animation for entry */
-            animation: fadeInDown 1s ease-out;
+            border: 2px solid #000;
         }
 
-        /* Heading Styles */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Typography */
         h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            letter-spacing: 3px;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8));
         }
 
-        .sub-heading {
+        .team-tag {
             font-size: 1.2rem;
-            color: #ccc;
+            color: #fff;
+            letter-spacing: 5px;
+            text-transform: uppercase;
             margin-bottom: 30px;
-            font-weight: 300;
+            opacity: 0.9;
         }
 
-        /* Card/Content Box */
-        .info-card {
+        /* Glassmorphism Card */
+        .glass-panel {
             background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             margin-bottom: 30px;
-            backdrop-filter: blur(10px);
         }
 
-        p {
+        .glass-panel p {
+            font-weight: 300;
             line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+            color: #e0e0e0;
         }
 
-        /* Managed CTA Button */
-        .cta-button {
-            display: inline-block;
-            padding: 18px 40px;
-            background: var(--btn-grad);
+        .highlight {
+            color: var(--gold);
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        /* High-End Animated Button */
+        .btn-telegram {
+            position: relative;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
             color: #000;
+            text-transform: uppercase;
             text-decoration: none;
-            font-weight: bold;
+            background: var(--gold-gradient);
             border-radius: 50px;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            animation: pulse 2s infinite;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4);
+        .btn-telegram:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Light Streak Animation on Button */
+        .btn-telegram::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        @keyframes shine {
+            0% { left: -150%; }
+            100% { left: 150%; }
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 400px) {
-            h1 { font-size: 1.5rem; }
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .team-tag { font-size: 0.9rem; }
             .logo { width: 100px; height: 100px; }
-            .cta-button { width: 100%; padding: 15px 20px; }
+            .glass-panel { padding: 20px; width: 85%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <div class="hero-bg"></div>
+    <div class="overlay"></div>
 
-    <div class="container">
-        <div class="logo-container">
-            <img src="https://via.placeholder.com/150/d4af37/000000?text=Hack11" alt="Logo" class="logo">
+    <div class="main-content">
+        <div class="logo-wrapper">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150/000000/ffcc00?text=VIP" alt="Hack11 Team Logo">
+            </div>
         </div>
 
         <h1>DELTIN ROYALE CASINO</h1>
-        <div class="sub-heading">{ Hack11 Team }</div>
+        <div class="team-tag">{ Hack11 Team }</div>
 
-        <div class="info-card">
-            <p>Welcome to the ultimate destination for casino insights and strategic updates.</p>
-            <p><strong>Exclusive Hacks • Live Updates • Expert Analysis</strong></p>
-            <p>Join our elite community and stay ahead of the game with the Hack11 Team.</p>
+        <div class="glass-panel">
+            <p>Experience the ultimate luxury of winning. Get exclusive access to premium hacks, real-time table insights, and expert strategies.</p>
+            <span class="highlight">✦ SECURE ✦ PRIVATE ✦ PROFESSIONAL ✦</span>
         </div>
 
-        <a href="https://t.me/+v8imbxIA--gxNjhl" target="_blank" class="cta-button" id="joinBtn">
-            JOIN TELEGRAM CHANNEL
+        <a href="https://t.me/+v8imbxIA--gxNjhl" class="btn-telegram">
+            Join VIP Telegram
         </a>
     </div>
 
     <script>
-        // JS for basic speed optimization and interaction
+        // Speed Optimization: Simple interaction script
         document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('joinBtn');
-            
-            // Log for analytics (optional)
-            btn.addEventListener('click', () => {
-                console.log('Redirecting to Telegram...');
-            });
-
-            // Lazy load check (if you add more images later)
-            console.log("Landing page loaded successfully.");
+            console.log("VIP Landing Page Active");
+            // Prevent right click to make it feel more 'exclusive' (optional)
+            document.addEventListener('contextmenu', event => event.preventDefault());
         });
     </script>
+
 </body>
 </html>
