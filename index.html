@@ -25,29 +25,39 @@
         body, html {
             width: 100%;
             height: 100%;
-            background-color: #000;
+            background-color: #050505;
             font-family: 'Poppins', sans-serif;
             color: #fff;
             overflow: hidden;
             position: fixed;
         }
 
-        /* --- NEW FALLING GOLD MATRIX BACKGROUND --- */
-        #bg-canvas {
+        /* --- BLURRY AURA ANIMATION --- */
+        .background-wrapper {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -1;
+            filter: blur(80px); /* This creates the blurry "nice" effect */
             opacity: 0.6;
         }
 
-        .overlay-dark {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle, transparent 20%, #000 100%);
-            z-index: -1;
+        .blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: #b38728;
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+
+        .blob-1 { top: -10%; left: -10%; background: #aa771c; }
+        .blob-2 { bottom: -10%; right: -10%; background: #bf953f; animation-duration: 25s; }
+        .blob-3 { top: 40%; left: 30%; width: 200px; height: 200px; background: #fcf6ba; animation-duration: 15s; }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 100px) scale(1.2); }
         }
 
         .container {
@@ -62,7 +72,7 @@
             z-index: 10;
         }
 
-        /* Logo with Glow */
+        /* Logo Styling */
         .logo-wrapper {
             margin-bottom: 15px;
         }
@@ -73,7 +83,7 @@
             border-radius: 50%;
             padding: 3px;
             background: var(--gold-gradient);
-            box-shadow: 0 0 30px rgba(255, 204, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             animation: float 4s ease-in-out infinite;
             margin: 0 auto;
         }
@@ -86,7 +96,7 @@
             display: block;
         }
 
-        /* Typography */
+        /* Text Content */
         h1 {
             font-family: 'Cinzel', serif;
             font-size: clamp(1.7rem, 8vw, 2.8rem);
@@ -95,48 +105,51 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
             letter-spacing: 1px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
 
         .team-tag {
             font-size: 0.8rem;
             letter-spacing: 4px;
-            color: var(--gold);
+            color: #fff;
             text-transform: uppercase;
             margin-bottom: 25px;
             font-weight: 600;
+            opacity: 0.8;
         }
 
-        /* Casino Box */
+        /* Content Panel */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 22px;
-            border-radius: 20px;
+            padding: 25px;
+            border-radius: 24px;
             width: 100%;
             max-width: 400px;
             margin-bottom: 35px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .glass-panel p {
             font-size: 1rem;
-            line-height: 1.5;
-            color: #fff;
+            line-height: 1.6;
+            color: #efefef;
         }
 
         .stats {
             display: flex;
             justify-content: space-around;
-            margin-top: 18px;
+            margin-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 15px;
         }
 
         .stat-item b { color: var(--gold); font-size: 1.2rem; }
-        .stat-item p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.7; }
+        .stat-item p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.6; }
 
-        /* --- ZOOM ANIMATED BUTTON --- */
+        /* --- THE ZOOM BUTTON --- */
         .btn-telegram {
             width: 100%;
             max-width: 320px;
@@ -149,11 +162,11 @@
             border-radius: 50px;
             text-transform: uppercase;
             display: block;
-            box-shadow: 0 10px 40px rgba(191, 149, 63, 0.6);
-            animation: zoomAction 2.5s infinite ease-in-out;
+            box-shadow: 0 15px 35px rgba(179, 135, 40, 0.4);
+            animation: zoomPulse 2s infinite ease-in-out;
         }
 
-        @keyframes zoomAction {
+        @keyframes zoomPulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.07); }
             100% { transform: scale(1); }
@@ -161,7 +174,7 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-10px); }
         }
 
         .footer {
@@ -174,8 +187,11 @@
 </head>
 <body>
 
-    <canvas id="bg-canvas"></canvas>
-    <div class="overlay-dark"></div>
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
     <div class="container">
         <div class="logo-wrapper">
@@ -185,10 +201,10 @@
         </div>
 
         <h1>DELTIN ROYALE</h1>
-        <div class="team-tag">Predicton Mastery</div>
+        <div class="team-tag">Elite Betting mastery</div>
 
         <div class="glass-panel">
-            <p>Crush the house odds with <b>live predictive algorithms</b>. Join the elite winners circle now.</p>
+            <p>Master the table and crush the odds. Join us for <b>real-time predictive hacks</b> and exclusive winning strategies.</p>
             
             <div class="stats">
                 <div class="stat-item">
@@ -201,59 +217,17 @@
                 </div>
                 <div class="stat-item">
                     <b>LIVE</b>
-                    <p>Support</p>
+                    <p>Hacks</p>
                 </div>
             </div>
         </div>
 
         <a href="https://t.me/+v8imbxIA--gxNjhl" class="btn-telegram">
-            GET VIP ACCESS NOW
+            JOIN THE WINNING STREAK
         </a>
 
         <div class="footer">✦ 18+ | PLAY RESPONSIBLY ✦</div>
     </div>
 
-    <script>
-        // Matrix Falling Gold Effect
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const characters = '01$#789X';
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-
-        for (let i = 0; i < columns; i++) {
-            drops[i] = 1;
-        }
-
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#bf953f'; // Gold Color
-            ctx.font = fontSize + 'px Courier New';
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        setInterval(draw, 35);
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
